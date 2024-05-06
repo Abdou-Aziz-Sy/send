@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel= "stylesheet" href= "https://use.fontawesome.com/releases/v5.0.7/css/all.css" crossorigin="anonymous"/>
+</head>
+<body>
+<div id="root"></div>
+<script src="react/react.js"></script>
+<script src="react/react-dom.js"></script>
+<script src="react/babel.js"></script>
+<script type="text/babel">
+
+    function Counter(){
+        const [ countup , SetCountup] = React.useState(0);
+        const [ countdown , SetCountdown] = React.useState(0);
+        return (
+            <div>
+
+                <button onClick={() => SetCountup(countup + 1)}>
+                    <i className="fas fa-thumbs-up"></i>
+                    {countup}
+                </button>
+                <button onClick={() => SetCountdown(countdown + 1)}>
+                    <i className="fas fa-thumbs-down"></i>
+                    {countdown}
+                </button>
+            </div>)
+    }
+
+    function App() {
+        return <Counter/>;
+    }
+
+    ReactDOM.render(<App/>, document.querySelector("#root"));
+</script>
+</body>
+</html>
